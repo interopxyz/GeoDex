@@ -4,7 +4,7 @@ namespace Geodex.Surface
 {
     public class Dini : Field
     {
-        public double A = 1.0;
+        public double A = 0.2;
 
         public Dini() : base()
         {
@@ -25,11 +25,12 @@ namespace Geodex.Surface
         protected override void Evaluate()
         {
             double i = U * Math.PI;
-            double j = A * Math.Cosh(V / A);
+            double j = V;
 
-            p.X = j * Math.Cos(i);
-            p.Y = j * Math.Sin(i);
-            p.Z = V;
+
+            p.X = Math.Cos(i) * Math.Sin(j);
+            p.Y = Math.Sin(i) * Math.Sin(j);
+            p.Z = (Math.Cos(j) + Math.Log(Math.Tan(j / 2))) + A * i;
         }
     }
 }
