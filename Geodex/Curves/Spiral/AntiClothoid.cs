@@ -4,6 +4,13 @@ namespace Geodex.Curves.Spiral
 {
     public class AntiClothoid : Curve
     {
+
+        #region members
+
+        #endregion
+
+        #region constructors
+
         public AntiClothoid() : base()
         {
 
@@ -14,12 +21,21 @@ namespace Geodex.Curves.Spiral
             this.T = t;
         }
 
+        #endregion
+
+        #region methods
+
         protected override void Evaluate()
         {
+
             double s = t * Math.PI;
-            
-            p.X = Math.Cos(s)+s*Math.Sin(s);
-            p.Y = Math.Sin(s) + s * Math.Cos(s);
+
+            p.X = Math.Cos(s) + s * Math.Sin(s);
+            p.Y = Math.Sin(s) - s * Math.Cos(s);
+
         }
+
+        #endregion
+
     }
 }

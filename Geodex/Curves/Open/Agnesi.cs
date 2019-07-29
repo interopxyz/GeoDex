@@ -4,32 +4,48 @@ namespace Geodex.Curves.Open
 {
     public class Agnesi : Curve
     {
-        public double Diameter = 1.0;
-        public double Spread = 1.0;
+
+        #region members
+
+        public double A = 1.0;
+        public double B = 5.0;
+
+        #endregion
+
+        #region constructors
 
         public Agnesi() : base()
         {
 
         }
-        public Agnesi(double diameter, double spread) : base()
-        {
-            Diameter = diameter;
-            Spread = spread;
-        }
 
-        public Agnesi(double t, double diameter, double spread) : base()
+        public Agnesi(double t) : base()
         {
-            Diameter = diameter;
-            Spread = spread;
             this.T = t;
         }
 
+        public Agnesi(double t, double a, double b) : base()
+        {
+            this.A = a;
+            this.B = b;
+
+            this.T = t;
+        }
+
+        #endregion
+
+        #region methods
+
         protected override void Evaluate()
         {
-            double s = t * Spread;
+
+            double s = t * B;
             p.X = s;
-            p.Y = (8.0 * Math.Pow(Diameter, 3.0)) / (Math.Pow(s, 2) + 4.0 * Math.Pow(Diameter, 2));
-            
+            p.Y = (8.0 * Math.Pow(A, 3.0)) / (Math.Pow(s, 2) + 4.0 * Math.Pow(A, 2));
+
         }
+
+        #endregion
+
     }
 }

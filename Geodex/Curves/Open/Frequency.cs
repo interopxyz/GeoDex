@@ -4,8 +4,12 @@ namespace Geodex.Curves.Open
 {
     public class Frequency : Curve
     {
-        public double Diameter = 1.0;
-        public double Spread = 1.0;
+
+        #region members
+        
+        #endregion
+
+        #region constructors
 
         public Frequency() : base()
         {
@@ -17,12 +21,20 @@ namespace Geodex.Curves.Open
             this.T = t;
         }
 
+        #endregion
+
+        #region methods
+
         protected override void Evaluate()
         {
+
             p.X = t;
             p.Y = Math.Sqrt((2 * Math.PI) * Math.Exp(-Math.Pow(t, 2) / 2));
 
         }
+
+        #endregion
+
     }
 }
 

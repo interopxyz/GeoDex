@@ -4,29 +4,41 @@ namespace Geodex.Curves.Closed
 {
     public class BoothsLemniscate : Curve
     {
+
+        #region members
+
         public double A = 1.0;
         public double B = 1.0;
+
+        #endregion
+
+        #region constructors
 
         public BoothsLemniscate() : base()
         {
 
         }
 
-        public BoothsLemniscate(double a, double b) : base()
+        public BoothsLemniscate(double t) : base()
         {
-            this.A = a;
-            this.B = b;
+            this.T = t;
         }
 
         public BoothsLemniscate(double t, double a, double b) : base()
         {
             this.A = a;
             this.B = b;
+
             this.T = t;
         }
 
+        #endregion
+
+        #region methods
+
         protected override void Evaluate()
         {
+
             double s = t * Math.PI;
 
 
@@ -36,5 +48,8 @@ namespace Geodex.Curves.Closed
             p.Y = A * ((Math.Sin(s) * Math.Cos(s)) / i);
 
         }
+
+        #endregion
+
     }
 }

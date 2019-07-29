@@ -1,16 +1,19 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Geodex
 {
     public class Point
     {
+
+        #region members
+
         public double X = 0;
         public double Y = 0;
         public double Z = 0;
+
+        #endregion
+
+        #region constructor
 
         public Point()
         {
@@ -37,6 +40,15 @@ namespace Geodex
             this.Z = z;
         }
 
+        #endregion
+
+        #region properties
+
+        #endregion
+
+        #region methods
+
+        #endregion
 
     }
 }

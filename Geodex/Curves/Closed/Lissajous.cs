@@ -4,35 +4,51 @@ namespace Geodex.Curves.Closed
 {
     public class Lissajous : Curve
     {
-        public double A = 1;
-        public double B = 2;
-        public double Rotation = 0;
+
+        #region members
+
+        public double A = 5.0;
+        public double B = 3.0;
+        public double C = 0.5;
+
+        #endregion
+
+        #region constructors
+
         public Lissajous() : base()
         {
 
         }
 
-        public Lissajous(double a, double b, double rotation) : base()
+        public Lissajous(double t) : base()
         {
-            this.A = a;
-            this.B = b;
-            this.Rotation = rotation;
-        }
-
-        public Lissajous(double t, double a, double b, double rotation) : base()
-        {
-            this.A = a;
-            this.B = b;
-            this.Rotation = rotation;
             this.T = t;
         }
 
+        public Lissajous(double t, double a, double b, double c) : base()
+        {
+            this.A = a;
+            this.B = b;
+            this.C = c;
+
+            this.T = t;
+        }
+
+        #endregion
+
+        #region methods
+
         protected override void Evaluate()
         {
+
             double s = t * Math.PI;
 
-            p.X = Math.Sin(A * 2 * s + Rotation * Math.PI);
+            p.X = Math.Sin(A * 2 * s + C * Math.PI);
             p.Y = Math.Sin(B * 2 * s);
+
         }
+
+        #endregion
+
     }
 }

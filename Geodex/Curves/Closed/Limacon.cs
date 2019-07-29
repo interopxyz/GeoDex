@@ -4,37 +4,51 @@ namespace Geodex.Curves.Closed
 {
     public class Limacon : Curve
     {
-        public double InnerRadius = 1;
-        public double RollerRadius = 2;
-        public double Distance = 1;
+
+        #region members
+
+        public double A = 2.0;
+        public double B = 1.0;
+
+        #endregion
+
+        #region constructors
+
         public Limacon() : base()
         {
 
         }
 
-        public Limacon(double innerRadius, double rollerRadius, double distance) : base()
+        public Limacon(double t) : base()
         {
-            this.InnerRadius = innerRadius;
-            this.RollerRadius = rollerRadius;
-            this.Distance = distance;
-        }
-
-        public Limacon(double t, double innerRadius, double rollerRadius, double distance) : base()
-        {
-            this.InnerRadius = innerRadius;
-            this.RollerRadius = rollerRadius;
-            this.Distance = distance;
             this.T = t;
         }
 
+        public Limacon(double t, double a, double b) : base()
+        {
+            this.A = a;
+            this.B = b;
+
+            this.T = t;
+        }
+
+        #endregion
+
+        #region methods
+
         protected override void Evaluate()
         {
+
             double s = t * Math.PI;
 
-            double u = RollerRadius + InnerRadius * Math.Cos(s);
+            double u = B + A * Math.Cos(s);
 
             p.X = u * Math.Cos(s);
             p.Y = u * Math.Sin(s);
+
         }
+
+        #endregion
+
     }
 }

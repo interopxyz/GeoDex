@@ -4,7 +4,15 @@ namespace Geodex.Curves.Spiral
 {
     public class Lituus : Curve
     {
-        double A = 1;
+
+        #region members
+
+        public double A = 1;
+
+        #endregion
+
+        #region constructors
+
         public Lituus() : base()
         {
 
@@ -15,14 +23,23 @@ namespace Geodex.Curves.Spiral
             this.T = t;
         }
 
+        #endregion
+
+        #region methods
+
         protected override void Evaluate()
         {
+
             double s = t * Math.PI;
 
             double u = Math.Sqrt(Math.Pow(A,2)/s);
 
             p.X = u * Math.Cos(s);
             p.Y = u * Math.Sin(s);
+
         }
+
+        #endregion
+
     }
 }

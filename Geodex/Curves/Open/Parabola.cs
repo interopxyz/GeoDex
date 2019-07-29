@@ -4,30 +4,47 @@ namespace Geodex.Curves.Open
 {
     public class Parabola : Curve
     {
-        double Focus = 1;
+
+        #region members
+
+        public double A = 1.0;
+
+        #endregion
+
+        #region constructors
 
         public Parabola() : base()
         {
 
         }
 
-        public Parabola(double focus) : base()
+        public Parabola(double t) : base()
         {
-            this.Focus = focus;
-        }
-
-        public Parabola(double t, double focus) : base()
-        {
-            this.Focus = focus;
             this.T = t;
         }
 
+        public Parabola(double t, double a) : base()
+        {
+            this.A = a;
+
+            this.T = t;
+        }
+
+        #endregion
+
+        #region methods
+
         protected override void Evaluate()
         {
+
             double s = t * Math.PI;
             
             p.X = t;
-            p.Y = Math.Pow(t,2) / (4 * Focus);
+            p.Y = Math.Pow(t,2) / (4 * A);
+
         }
+
+        #endregion
+
     }
 }

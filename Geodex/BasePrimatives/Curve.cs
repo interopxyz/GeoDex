@@ -1,4 +1,5 @@
-﻿
+﻿using System;
+
 namespace Geodex
 {
     public abstract class Curve

@@ -1,15 +1,18 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Geodex
 {
     public class UV
     {
+
+        #region members
+
         public double U = 0;
         public double V = 0;
+
+        #endregion
+
+        #region constructor
 
         public UV()
         {
@@ -27,6 +30,16 @@ namespace Geodex
             this.U = u;
             this.V = v;
         }
+
+        #endregion
+
+        #region properties
+
+        #endregion
+
+        #region methods
+
+        #endregion
 
     }
 }
