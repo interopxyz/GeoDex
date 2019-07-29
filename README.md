@@ -1,5 +1,5 @@
 # GeoDex
-A library of curve, surface, and volume equations.
+A .NET Library of curve, surface, and volume equations.
 
 ### References
 Equations derived from the following sources
