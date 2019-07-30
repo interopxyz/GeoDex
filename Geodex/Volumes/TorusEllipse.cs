@@ -50,7 +50,7 @@ namespace Geodex.Volumes
 
             p.X = (A + B * Math.Cos(i)) * Math.Cos(j);
             p.Y = (A + B * Math.Cos(i)) * Math.Sin(j);
-            p.Z = C * Math.Sin(j);
+            p.Z = C * Math.Sin(i);
 
         }
 
