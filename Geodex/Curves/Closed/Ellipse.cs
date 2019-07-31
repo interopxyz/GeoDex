@@ -7,8 +7,8 @@ namespace Geodex.Curves.Closed
 
         #region members
 
-        public double Width = 2.0;
-        public double Height = 1.0;
+        public double A = 2.0;
+        public double B = 1.0;
 
         #endregion
 
@@ -24,10 +24,10 @@ namespace Geodex.Curves.Closed
             this.T = t;
         }
 
-        public Ellipse(double t, double width, double height) : base()
+        public Ellipse(double t, double a, double b) : base()
         {
-            this.Width = width;
-            this.Height = height;
+            this.A = a;
+            this.B = b;
 
             this.T = t;
         }
@@ -39,8 +39,8 @@ namespace Geodex.Curves.Closed
         protected override void Evaluate()
         {
 
-            p.X = Width * Math.Sin(t * Math.PI);
-            p.Y = Height * Math.Cos(t * Math.PI);
+            p.X = A * Math.Sin(t * Math.PI);
+            p.Y = B * Math.Cos(t * Math.PI);
 
         }
 
