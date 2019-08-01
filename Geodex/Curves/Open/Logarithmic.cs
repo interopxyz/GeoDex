@@ -6,10 +6,7 @@ namespace Geodex.Curves.Open
     {
 
         #region members
-
-        public double A = 1.0;
-        public double B = 1.0;
-
+        
         #endregion
 
         #region constructors
@@ -24,14 +21,6 @@ namespace Geodex.Curves.Open
             this.T = t;
         }
 
-        public Logarithmic(double t, double a, double b) : base()
-        {
-            this.A = a;
-            this.B = b;
-
-            this.T = t;
-        }
-
         #endregion
 
         #region methods
@@ -40,7 +29,7 @@ namespace Geodex.Curves.Open
         {
 
             p.X = t;
-            p.Y = A * Math.Log(t / B);
+            p.Y = Math.Pow(2,t);
 
         }
 

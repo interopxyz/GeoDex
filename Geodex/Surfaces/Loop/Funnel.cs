@@ -6,9 +6,7 @@ namespace Geodex.Surfaces.Loop
     {
 
         #region members
-
-        public double A = 0.2;
-
+        
         #endregion
 
         #region constructors
@@ -20,14 +18,6 @@ namespace Geodex.Surfaces.Loop
 
         public Funnel(UV uv) : base()
         {
-            this.U = uv.U;
-            this.V = uv.V;
-        }
-
-        public Funnel(UV uv, double a) : base()
-        {
-            this.A = a;
-
             this.U = uv.U;
             this.V = uv.V;
         }
